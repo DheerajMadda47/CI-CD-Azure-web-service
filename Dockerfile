@@ -6,6 +6,6 @@ WORKDIR /app
 
 RUN pip install fastapi redis pandas uvicorn docker
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["uvicorn", "src.main:app", "--host=0.0.0.0", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host=0.0.0.0", "--port=8080"]
