@@ -2,7 +2,6 @@ from fastapi import FastAPI
 import redis
 import pandas as pd
 # import asyncio
-
 # import aioredis
 
 app = FastAPI()
@@ -10,8 +9,8 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup_event():
-    global r
     try:
+        global r
         r = redis.Redis(
             host="demo1redis.redis.cache.windows.net",
             port="6379",
