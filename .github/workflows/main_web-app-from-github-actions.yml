@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: demo1containerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e754b4f8cfce418f85e0565c4a71c327 }}/image-demo1project:${{ github.sha }}
+        tags: demo1containerregistry.azurecr.io/image-demo1project:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'web-app-from-github-actions'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1750ed06828f4e0ea0db6ffff58d64f1 }}
-        images: 'demo1containerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e754b4f8cfce418f85e0565c4a71c327 }}/image-demo1project:${{ github.sha }}'
+        images: 'demo1containerregistry.azurecr.io/image-demo1project:${{ github.sha }}'
